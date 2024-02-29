@@ -27,17 +27,26 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-const newElements = images.map((img) => {
-  const newItem = document.createElement("li");
-  newItem.classList.add("gallery-item");
-  const newImg = document.createElement("img");
-  newImg.src = img.url;
-  newImg.alt = img.alt;
-  newImg.width = 440;
-  newItem.append(newImg);
+const newElements = images
+  .map(
+    ({ url, alt }) => `
+    <li class="gallery-item">
+      <img src="${url}" alt="${alt}"/>
+    </li>`
+  )
+  .join("");
 
-  return newItem;
-});
+gallery.insertAdjacentHTML("beforeend", newElements);
 
-gallery.append(...newElements);
+// const newElements = images.map(({ url, alt }) => {
+//   const newItem = document.createElement("li");
+//   newItem.classList.add("gallery-item");
+//   const newImg = document.createElement("img");
+//   newImg.src = url;
+//   newImg.alt = alt;
+//   newItem.append(newImg);
 
+//   return newItem;
+// });
+
+// gallery.append(...newElements);

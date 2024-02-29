@@ -9,25 +9,180 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
-  color: #212121;
+  color: #2e2f42;
   line-height: 1.5;
+  letter-spacing: 0.04em;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  padding: 8px 16px;
+  min-width: 360px;
+  height: 40px;
+
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #808080;
+  opacity: 0.7;
+}
+
+input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #808080;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  min-width: 120px;
+  height: 40px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+
+  border-radius: 8px;
+  background-color: #4e75ff;
+  border: none;
+}
+
+button:hover {
+  background: #6c8cff;
+}
+
+/* task 1 */
+
+.item {
+  margin-bottom: 24px;
+  padding: 16px;
+
+  border-radius: 8px;
+  width: 392px;
+  background: #f6f6fe;
+}
+
+.item h2 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33333;
+}
+
+.item li {
+  padding: 8px 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+.item li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+/* task 2 */
 
 .gallery {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 32px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  column-gap: 24px;
+  row-gap: 48px;
   align-items: center;
+}
+
+.gallery-item {
+  flex-basis: calc((100% - 48px) / 3);
 }
 
 .gallery img {
   display: block;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
-#boxes div{
-  margin-top: 10px;
+/* task 3 */
+
+input + h1 {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+}
+
+/* task 4 */
+.login-form,
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-form input {
+  width: 360px;
+}
+
+.login-form button {
+  max-width: 86px;
+  margin-top: 16px;
+}
+
+/* task 5 */
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.widget p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+/* task 6 */
+
+#controls {
+  display: flex;
+  gap: 16px;
+}
+
+#controls input {
+  min-width: 150px;
+}
+
+button[data-destroy] {
+  background-color: #ff4e4e;
+}
+
+button[data-destroy]:hover {
+  background-color: #ff7070;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px;
 }
